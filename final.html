@@ -18,6 +18,7 @@
             --yellow: rgb(255, 217, 0);
             --black: rgb(39, 39, 39);
             --grey: rgb(231, 231, 231);
+            --blue: #3684D4;
         }
 
         body {
@@ -26,18 +27,18 @@
             width: 100vw;
             display: flex;
             gap: 20px;
+            background-color: whitesmoke;
         }
 
         aside {
-            border: 1px solid red;
             width: 35%;
             height: 100%;
         }
 
         main {
-            border: 1px solid red;
             width: 65%;
             height: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 
         div.cv {
@@ -204,6 +205,85 @@
             font-size: 0.6rem;
             font-weight: bold;
         }
+
+        aside > section {
+            border-radius: 5px;
+            margin: 16px 0;
+            padding: 24px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        aside svg {
+            height: 25px;
+            width: auto;
+        }
+
+        section > p.title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        section .actions {
+            display: flex;
+            margin-top: 16px; 
+        }
+
+        .actions #delete {
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .actions button {
+            padding: 6px 10px;
+            border-radius: 8px;
+            border: none;
+            border: 1px solid grey;
+        }
+
+        .actions #save {
+            border: none;
+            background-color: var(--blue);
+            color: white;
+            margin-left: 10px;
+        }
+
+        aside form > div.field {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            margin: 8px 0;
+        }
+
+        form .dates {
+            display: flex;
+            gap: 16px;
+        }
+
+        form .dates input {
+            width: 100%;
+        }
+
+        form label {
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        form input {
+            padding: 4px 10px;
+            background-color: var(--grey);
+            border-radius: 8px;
+            border: none;
+            height: 32px;
+            margin-top: 8px;
+        }
+
+        form input:focus {
+            outline: 2px solid var(--blue);
+        }
     </style>
 </head>
 
@@ -229,17 +309,11 @@
                     <input type="text" name="address" id="address" placeholder="Address">
                 </div>
             </form>
-            <div class="actions">
-                <button id="delete">
-                    <span></span>
-                    Delete
-                </button>
-                <button id="cancel"><span></span>Cancel</button>
-                <button id="save"><span></span>Save</button>
-            </div>
         </section>
         <section class="education">
-            <p class="title">Education</p>
+            <p class="title">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>school</title><path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" /></svg></span>
+                Education</p>
             <form action="" method="POST">
                 <div class="field">
                     <label for="school">School</label>
@@ -262,14 +336,19 @@
             </form>
             <div class="actions">
                 <button id="delete">
-                    <span></span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                    </span>
                     Delete
                 </button>
-                <button id="cancel"><span></span>Cancel</button>
-                <button id="save"><span></span>Save</button>
+                <button id="cancel">Cancel</button>
+                <button id="save">Save</button>
             </div>
         </section>
         <section class="work">
+            <p class="title">
+                <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>briefcase-variant</title><path d="M10 16V15H3L3 19C3 20.11 3.89 21 5 21H19C20.11 21 21 20.11 21 19V15H14V16H10M20 7H16V5L14 3H10L8 5V7H4C2.9 7 2 7.9 2 9V12C2 13.11 2.89 14 4 14H10V12H14V14H20C21.1 14 22 13.1 22 12V9C22 7.9 21.1 7 20 7M14 7H10V5H14V7Z" /></svg></span>
+                Experience</p>
             <form action="" method="POST">
                 <div class="field">
                     <label for="name">Company Name</label>
@@ -300,11 +379,13 @@
             </form>
             <div class="actions">
                 <button id="delete">
-                    <span></span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trash-can</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z" /></svg>
+                    </span>
                     Delete
                 </button>
-                <button id="cancel"><span></span>Cancel</button>
-                <button id="save"><span></span>Save</button>
+                <button id="cancel">Cancel</button>
+                <button id="save">Save</button>
             </div>
         </section>
     </aside>

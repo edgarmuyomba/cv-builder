@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+:root {
+  font-size: calc(0.8vh + 0.8vw);
+  --yellow: rgb(255, 217, 0);
+  --black: rgb(39, 39, 39);
+  --grey: rgb(231, 231, 231);
+  --blue: #3684D4;
+}
+
+body {
+  padding: 1rem 10rem;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  gap: 20px;
+  background-color: whitesmoke;
+}
+
+div#root {
+  width: 100%;
+  height: 100%;
+}

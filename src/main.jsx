@@ -10,22 +10,58 @@ import { useState } from 'react';
 function Resume() {
   const resume_content = {
     profile: {
-      name: 'Abu Sayed Ahmed',
-      job_title: 'Graphic Designer'
+      name: 'Edgar Muyomba',
+      job_title: 'Software Engineer'
     },
     contact: {
-      phone: '+880 1866 388881',
-      email: 'iwantsahmed@gmail.com',
-      location: 'Chattogram, Bangladesh'
-    }
+      phone: '+256 758 101 803',
+      email: 'edgarmatthew247@gmail.com',
+      location: 'Makerere, Kikoni'
+    },
+    education: [
+      {
+        course: 'Computer Science',
+        campus: 'Makerere University',
+        period: {
+          start: '2022',
+          end: '2024'
+        }
+      },
+      {
+        course: 'Science',
+        campus: 'Hajera Taju University College',
+        period: {
+          start: '2016',
+          end: '2018'
+        }
+      }
+    ],
+    work: [
+      {
+        role: 'Mobile Application Developer',
+        company: 'Ridelink Inc',
+        period: {
+          start: '2023',
+          end: 'Present'
+        }
+      },
+      {
+        role: 'Data Analyst / Data Entry Operator',
+        company: 'Intelligent Image Management Limited',
+        period: {
+          start: '2020',
+          end: '2023'
+        }
+      }
+    ]
   };
 
   const [content, setContent] = useState(resume_content);
   
   return (
     <>
-      <Aside />
-      <Main />
+      <Aside updateContent={setContent} />
+      <Main {...content} />
     </>
   );
 }

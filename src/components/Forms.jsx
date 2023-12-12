@@ -1,11 +1,19 @@
-function PersonalForm() {
+function PersonalForm({ updateContent }) {
     return (
         <section className="personal">
             <p className="title">Personal Information</p>
             <form action="" method="POST">
                 <div className="field">
                     <label htmlFor="fullname">Fullname</label>
-                    <input type="text" name="fullname" id="fullname" placeholder="First and Last name" />
+                    <input 
+                        type="text" 
+                        name="fullname" 
+                        id="fullname" 
+                        placeholder="First and Last name"
+                        onChange={(e) => {
+                            console.log(e.target.value);
+                            updateContent((content) => ({...content, name: e.target.value}))
+                        }} />
                 </div>
                 <div className="field">
                     <label htmlFor="email">Email</label>

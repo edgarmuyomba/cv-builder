@@ -1,15 +1,15 @@
 import { Info, Contact, Profile, Work, Interests } from "./cv-sections";
 
-export default function CV() {
+export default function CV(resume) {
     return (
       <div className="cv">
         <div className="side">
-            <Info />
-            <Contact />
+            <Info props={resume.education}/>
+            <Contact {...resume.contact} />
         </div>
         <div className="main">
-            <Profile />
-            <Work />
+            <Profile {...resume.profile} />
+            <Work props={resume.work} />
             <Interests />
         </div>
       </div>  

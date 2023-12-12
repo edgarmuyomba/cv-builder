@@ -1,9 +1,9 @@
 import CV from "./CV";
 
-export default function Main() {
+export default function Main(resume_content) {
     return (
         <main>
-            <CV />
+            <CV {...resume_content} />
         </main>
     );
 };

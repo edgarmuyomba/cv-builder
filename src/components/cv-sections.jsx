@@ -1,26 +1,27 @@
-function Info() {
+function Info({ props }) {
     return (
         <div className="info">
             <img src="https://picsum.photos/250/300" alt="" className="profile_image" />
             <div className="education">
                 <p className="title">EDUCATION</p>
                 <div className="tag"></div>
-                <div className="educ_record">
-                    <p className="course">SCIENCE</p>
-                    <p className="campus">Hajera Taju University College</p>
-                    <p className="years">2016-2018</p>
-                </div>
-                <div className="educ_record">
-                    <p className="course">SCIENCE</p>
-                    <p className="campus">Hajera Taju University College</p>
-                    <p className="years">2016-2018</p>
-                </div>
+                {
+                    props.map((educ_record, index) => {
+                        return (
+                            <div key={index} className="educ_record">
+                                <p className="course">{educ_record.course}</p>
+                                <p className="campus">{educ_record.campus}</p>
+                                <p className="years">{educ_record.period.start}-{educ_record.period.end}</p>
+                            </div>
+                        );
+                    })
+                }
             </div>
         </div>
     );
 }
 
-function Contact({ phone='+880 1866 388881', email='iwantsahmed@gmail.com', location='Chattogram, Bangladesh' }) {
+function Contact(props) {
     return (
         <div className="contact_details">
             <div className="icons">
@@ -42,25 +43,25 @@ function Contact({ phone='+880 1866 388881', email='iwantsahmed@gmail.com', loca
             </div>
             <div className="contact">
                 <p className="title">Phone</p>
-                <p className="value">{phone}</p>
+                <p className="value">{props.phone}</p>
             </div>
             <div className="contact">
                 <p className="title">Email</p>
-                <p className="value">{email}</p>
+                <p className="value">{props.email}</p>
             </div>
             <div className="contact">
                 <p className="title">Location</p>
-                <p className="value">{location}</p>
+                <p className="value">{props.location}</p>
             </div>
         </div>
     );
 }
 
-function Profile({ name='Abu Sayed Ahmed', job_title='Graphic Designer' }) {
+function Profile(props) {
     return (
         <div className="profile">
-            <p className="name">{name}</p>
-            <p className="job">{job_title}</p>
+            <p className="name">{props.name}</p>
+            <p className="job">{props.job_title}</p>
             <p className="title">PROFILE</p>
             <div className="tag"></div>
             <p className="brief">
@@ -74,27 +75,25 @@ function Profile({ name='Abu Sayed Ahmed', job_title='Graphic Designer' }) {
     );
 }
 
-function Work() {
+function Work({ props }) {
     return (
         <div className="work">
             <p className="title">WORK EXPERIENCE</p>
             <div className="tag"></div>
-            <div className="work_record">
-                <p className="role">Data Analyst / Data Entry Operator</p>
-                <p className="company">
-                    <span className="period">2020-2021</span>
-                    Intelligent Image Management Limited
-                </p>
-                <p className="description">Worked as a data analyst / data entry operator. Led a team and worked with a personalized application</p>
-            </div>
-            <div className="work_record">
-                <p className="role">Data Analyst / Data Entry Operator</p>
-                <p className="company">
-                    <span className="period">2020-2021</span>
-                    Intelligent Image Management Limited
-                </p>
-                <p className="description">Worked as a data analyst / data entry operator. Led a team and worked with a personalized application</p>
-            </div>
+            {
+                props.map((work_record, index) => {
+                    return (
+                        <div key={index} className="work_record">
+                            <p className="role">{work_record.role}</p>
+                            <p className="company">
+                                <span className="period">{work_record.period.start}-{work_record.period.end}</span>
+                                {work_record.company}
+                            </p>
+                            <p className="description">Worked as a data analyst / data entry operator. Led a team and worked with a personalized application</p>
+                        </div>
+                    );
+                })
+            }
         </div>
     );
 }

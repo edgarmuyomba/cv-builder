@@ -11,6 +11,8 @@ div.cv {
 
 .cv>.side {
     width: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cv .info {
@@ -64,9 +66,11 @@ div.contact_details {
     padding: 32px 50px;
     display: grid;
     align-items: center;
+    align-content: end;
     grid-template-columns: 40px auto;
     grid-template-rows: repeat(3, 50px);
     padding-bottom: 0;
+    height: 100%;
 }
 
 .contact_details .icons {
@@ -125,6 +129,11 @@ div.contact_details {
 
 .profile .brief {
     font-size: 0.7rem;
+    overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 5; /* number of lines to show */
+           line-clamp: 5; 
+   -webkit-box-orient: vertical;
 }
 
 .main .work {
@@ -159,7 +168,7 @@ div.contact_details {
 }
 
 .main .interests {
-    padding: 0 32px;
+    padding: 0 32px 100px 32px;
 }
 
 .interests ul {

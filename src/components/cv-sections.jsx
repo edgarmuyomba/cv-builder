@@ -64,7 +64,12 @@ function Profile() {
             <p className="title">PROFILE</p>
             <div className="tag"></div>
             <p className="brief">
-                I am Abu Sayed Ahmed. Son of Mohammed Abu Tayab and Nasrin Sultana Khanam. Born on 28th December, 1999. Blood group A+</p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis veritatis optio blanditiis laborum eligendi consectetur repellendus eveniet! Laboriosam sapiente cumque recusandae repellat laudantium a, iste eum dolores earum saepe.
+                Illo porro, fuga eius sed praesentium voluptas fugiat explicabo vel repellendus fugit numquam iste non voluptatibus rem molestiae quibusdam natus nemo eos, harum obcaecati? Ad eius possimus repudiandae suscipit nisi.
+                Eum provident sed adipisci. Consectetur officia dolores tempore dolorum, provident commodi dolor earum nisi laborum similique odit asperiores enim iusto dignissimos cum impedit. Impedit quae expedita rem, nulla mollitia voluptatum.
+                Laudantium, est voluptatum eveniet porro eaque voluptatibus deserunt consectetur numquam voluptate maxime consequatur praesentium officiis quidem aliquam sed quos suscipit odit ipsa illo corrupti. Consectetur cupiditate incidunt minima sunt animi!
+                Repellendus quas esse veniam voluptatem fuga qui ducimus, sit iste dolores non a quasi nihil iusto unde dicta excepturi rerum molestiae sint quae odit asperiores corporis quos at. Ea, accusantium?
+            </p>
         </div>
     );
 }

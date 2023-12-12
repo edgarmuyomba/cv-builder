@@ -13,7 +13,7 @@
   --blue: #3684D4;
 }
 
-body {
+div#root {
   padding: 1rem 10rem;
   height: 100vh;
   width: 100vw;

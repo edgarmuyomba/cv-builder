@@ -20,7 +20,7 @@ function Info() {
     );
 }
 
-function Contact() {
+function Contact({ phone='+880 1866 388881', email='iwantsahmed@gmail.com', location='Chattogram, Bangladesh' }) {
     return (
         <div className="contact_details">
             <div className="icons">
@@ -42,25 +42,25 @@ function Contact() {
             </div>
             <div className="contact">
                 <p className="title">Phone</p>
-                <p className="value">+880 1866 388881</p>
+                <p className="value">{phone}</p>
             </div>
             <div className="contact">
                 <p className="title">Email</p>
-                <p className="value">iwantsahmed@gmail.com</p>
+                <p className="value">{email}</p>
             </div>
             <div className="contact">
                 <p className="title">Location</p>
-                <p className="value">Chattogram, Bangladesh</p>
+                <p className="value">{location}</p>
             </div>
         </div>
     );
 }
 
-function Profile() {
+function Profile({ name='Abu Sayed Ahmed', job_title='Graphic Designer' }) {
     return (
         <div className="profile">
-            <p className="name">Abu Sayed Ahmed</p>
-            <p className="job">Graphic Designer</p>
+            <p className="name">{name}</p>
+            <p className="job">{job_title}</p>
             <p className="title">PROFILE</p>
             <div className="tag"></div>
             <p className="brief">
@@ -122,4 +122,4 @@ function Interests() {
     );
 }
 
-export { Info, Contact, Profile, Work, Interests };
+export { Info, Contact, Profile, Work, Interests }; 

@@ -19,6 +19,10 @@ function PersonalForm() {
                     <label htmlFor="address">Address</label>
                     <input type="text" name="address" id="address" placeholder="Address" />
                 </div>
+                <div className="field">
+                    <label htmlFor="job">Job Title</label>
+                    <input type="text" name="job" id="job" placeholder="Current Job Title" />
+                </div>
             </form>
         </section>
     );
@@ -37,7 +41,7 @@ function EducationForm() {
                     <input type="text" name="school" id="school" placeholder="School" />
                 </div>
                 <div className="field">
-                    <label htmlFor="degree">Degree</label>
+                    <label htmlFor="degree">Degree</label> 
                     <input type="text" name="degree" id="degree" placeholder="Degree" />
                 </div>
                 <div className="dates">

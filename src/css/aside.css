@@ -16,7 +16,7 @@ aside svg {
     width: auto;
 }
 
-section > p.title {
+section p.title {
     font-size: 0.75rem;
     font-weight: 600;
     display: flex;
@@ -51,7 +51,7 @@ button:hover {
     border: none;
     background-color: var(--blue);
     color: white;
-    margin-left: 10px;
+    margin-left: auto;
 }
 
 #submit {
@@ -93,4 +93,46 @@ form input {
 
 form input:focus {
     outline: 2px solid var(--blue);
+}
+
+section .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+div.drop {
+    padding: 2px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.drop:hover {
+    background-color: whitesmoke;
+}
+
+div.add-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.add {
+    display: flex;
+    font-size: 0.8rem;
+    width: 50%;
+    margin: 10px;
+    border: 1px solid lightgrey;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+    transition: scale 0.1s ease-in-out;
+}
+
+div.add:hover {
+    scale: 1.01;
 }

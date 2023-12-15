@@ -60,7 +60,7 @@ function Resume() {
   
   return (
     <>
-      <Aside updateContent={setContent} />
+      <Aside content={content} updateContent={setContent} />
       <Main {...content} />
     </>
   );

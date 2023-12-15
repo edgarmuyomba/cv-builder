@@ -1,7 +1,7 @@
 function Info({ props }) {
     return (
         <div className="info">
-            <img src="https://picsum.photos/250/300" alt="" className="profile_image" />
+            <img src="https://picsum.photos/250/300" height={300} width={250} alt="" className="profile_image" />
             <div className="education">
                 <p className="title">EDUCATION</p>
                 <div className="tag"></div>

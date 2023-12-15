@@ -35,7 +35,7 @@ section .actions {
     align-items: center;
 }
 
-.actions button {
+button {
     padding: 6px 10px;
     border-radius: 8px;
     border: none;
@@ -43,7 +43,7 @@ section .actions {
     transition: scale 0.2s ease-in-out;
 }
 
-.actions button:hover {
+button:hover {
     scale: 1.1;
 }
 
@@ -52,6 +52,13 @@ section .actions {
     background-color: var(--blue);
     color: white;
     margin-left: 10px;
+}
+
+#submit {
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    margin-left: auto;
 }
 
 aside form > div.field {

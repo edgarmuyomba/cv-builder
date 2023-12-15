@@ -1,4 +1,6 @@
 function PersonalForm({ updateContent }) {
+    var updates = {};
+
     return (
         <section className="personal">
             <p className="title">Personal Information</p>
@@ -11,25 +13,85 @@ function PersonalForm({ updateContent }) {
                         id="fullname" 
                         placeholder="First and Last name"
                         onChange={(e) => {
-                            console.log(e.target.value);
-                            updateContent((content) => ({...content, name: e.target.value}))
+                            try {
+                                updates['profile']['name'] =  e.target.value;
+                            } catch(TypeError) {
+                                updates['profile'] = {};
+                                updates['profile']['name'] =  e.target.value;
+                            }
                         }} />
                 </div>
                 <div className="field">
+                    <label htmlFor="job">Job Title</label>
+                    <input 
+                            type="text" 
+                            name="job" 
+                            id="job" 
+                            placeholder="Current Job Title"
+                            onChange={(e) => {
+                                try {
+                                    updates['profile']['job_title'] = e.target.value ;
+                                } catch(TypeError) {
+                                    updates['profile'] = {};
+                                    updates['profile']['job_title'] = e.target.value;
+                                }
+                            }}  />
+                </div>
+                <div className="field">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Email" />
+                    <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="Email"
+                            onChange={(e) => {
+                                try {
+                                    updates['contact']['email'] = e.target.value ;
+                                } catch(TypeError) {
+                                    updates['contact'] = {};
+                                    updates['contact']['email'] = e.target.value;
+                                }
+                            }}  />
                 </div>
                 <div className="field">
                     <label htmlFor="phone">Phone</label>
-                    <input type="tel" name="phone" id="phone" placeholder="Phone" />
+                    <input 
+                            type="tel" 
+                            name="phone" 
+                            id="phone" 
+                            placeholder="Phone"
+                            onChange={(e) => {
+                                try {
+                                    updates['contact']['phone'] = e.target.value ;
+                                } catch(TypeError) {
+                                    updates['contact'] = {};
+                                    updates['contact']['phone'] = e.target.value;
+                                }
+                            }}  />
                 </div>
                 <div className="field">
                     <label htmlFor="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Address" />
+                    <input 
+                            type="text" 
+                            name="address" 
+                            id="address" 
+                            placeholder="Address"
+                            onChange={(e) => {
+                                try {
+                                    updates['contact']['location'] = e.target.value ;
+                                } catch(TypeError) {
+                                    updates['contact'] = {};
+                                    updates['contact']['location'] = e.target.value;
+                                }
+                            }}  />
                 </div>
-                <div className="field">
-                    <label htmlFor="job">Job Title</label>
-                    <input type="text" name="job" id="job" placeholder="Current Job Title" />
+                <div className="actions">
+                    <button id="submit" type="submit" onClick={(e) => {
+                        e.preventDefault();
+                        updateContent((prevContent) => ({ ...prevContent, ...updates}));
+                    }}>
+                        Update
+                    </button>
                 </div>
             </form>
         </section>

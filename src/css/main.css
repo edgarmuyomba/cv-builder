@@ -23,6 +23,14 @@ div.cv {
     padding: 24px;
 }
 
+.info picture {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cv p.job {
     padding: 6px;
     background-color: var(--yellow);
@@ -163,10 +171,11 @@ div.contact_details {
 .profile .brief {
     font-size: 0.7rem;
     overflow: hidden;
-   display: -webkit-box;
-   -webkit-line-clamp: 5; /* number of lines to show */
-           line-clamp: 5; 
-   -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    /* number of lines to show */
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .main .work {
@@ -229,4 +238,104 @@ div.error {
     color: rgb(255, 0, 0);
     margin-top: 10px;
     display: none;
+}
+
+@media (max-width: 1024px) {
+    .cv .education {
+        padding: 16px 0;
+        width: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .educ_record {
+        margin-bottom: 0px;
+        padding: 8px;
+        min-width: 100px;
+    }
+
+    div.contact_details {
+        padding: 0px;
+        padding-bottom: 0;
+    }
+
+    .main .work {
+        padding: 0 24px;
+    }
+
+    .work_record {
+        margin-top: 10px;
+    }
+
+    .work_record span {
+        padding: 4px;
+        margin-right: 2px;
+    }
+}
+
+@media (max-width: 767px) {
+    main {
+        width: 80%;
+    }
+
+    .cv .info {
+        background-color: var(--black);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16px;
+    }
+
+    .cv .education {
+        padding: 16px 0;
+    }
+
+    .educ_record {
+        margin-bottom: 0px;
+        padding: 8px;
+        min-width: 100px;
+    }
+
+    div.contact_details {
+        grid-template-columns: 25px auto;
+        grid-template-rows: repeat(3, 30px);
+        padding: 0;
+    }
+
+    .contact_details .icons {
+        gap: 16px;
+        padding: 8px;
+        width: 25px;
+        height: 100%;
+    }
+    
+    .contact_details svg {
+        height: 25px;
+        width: 25px;
+    }
+    
+    .contact_details .contact {
+        grid-column: 2 / 3;
+        margin-left: 10px;
+    }
+    
+    .contact_details .contact:first-child {
+        padding-top: 16px;
+    }
+
+    .main .work {
+        padding: 0 20px;
+    }
+
+    .main .interests {
+        padding: 0 20px 100px 20px;
+    }
+
+    .work_record {
+        margin-top: 8px;
+    }
+
+    .work_record p.company {
+        line-height: 16px;
+    }
+
 }

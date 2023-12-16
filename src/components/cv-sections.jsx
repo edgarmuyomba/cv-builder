@@ -1,7 +1,11 @@
 function Info({ content, updateContent }) {
     return (
         <div className="info">
-            <img src="https://picsum.photos/250/300" height={300} width={250} alt="" className="profile_image" />
+            <picture>
+                <source media="(max-width: 767px)" srcSet="https://picsum.photos/100/160" />
+                <source media="(max-width: 1024px)" srcSet="https://picsum.photos/120/220" />
+                <img src="https://picsum.photos/250/300" alt="" className="profile_image" />
+            </picture>
             <div className="education">
                 <p className="title">EDUCATION</p>
                 <div className="tag"></div>

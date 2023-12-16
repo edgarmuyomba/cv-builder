@@ -20,4 +20,18 @@ div#root {
   display: flex;
   gap: 20px;
   background-color: whitesmoke;
+} 
+
+@media (max-width: 1024px) {
+  div#root {
+    padding: 1rem 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  div#root {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
 }

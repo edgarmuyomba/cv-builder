@@ -23,7 +23,7 @@ section p.title {
     align-items: center;
     gap: 4px;
 }
-
+ 
 section .actions {
     display: flex;
     margin-top: 16px; 
@@ -137,4 +137,16 @@ div.add {
 
 div.add:hover {
     scale: 1.01;
+}
+
+@media (max-width: 1024px) {
+    div.add {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    aside {
+        width: 80%;
+    }
 }

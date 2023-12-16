@@ -112,27 +112,4 @@ function Work({ content, updateContent }) {
     );
 }
 
-function Interests() {
-    return (
-        <div className="interests">
-            <p className="title">INTERESTS</p>
-            <div className="tag"></div>
-            <ul>
-                <li>
-                    <div className="icon"></div>
-                    <p className="name">Travel</p>
-                </li>
-                <li>
-                    <div className="icon"></div>
-                    <p className="name">Music</p>
-                </li>
-                <li>
-                    <div className="icon"></div>
-                    <p className="name">Writing</p>
-                </li>
-            </ul>
-        </div>
-    );
-}
-
-export { Info, Contact, Profile, Work, Interests }; 
+export { Info, Contact, Profile, Work }; 

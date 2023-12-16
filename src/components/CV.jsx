@@ -1,4 +1,4 @@
-import { Info, Contact, Profile, Work, Interests } from "./cv-sections";
+import { Info, Contact, Profile, Work } from "./cv-sections";
 import { forwardRef } from "react";
 
 const CV = forwardRef(({ resume, updateResume }, ref) => {
@@ -11,7 +11,6 @@ const CV = forwardRef(({ resume, updateResume }, ref) => {
         <div className="main">
             <Profile {...resume.profile} />
             <Work content={resume.work} updateContent={updateResume} />
-            <Interests />
         </div>
       </div>  
     );

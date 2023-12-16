@@ -63,7 +63,7 @@ function Resume() {
   return (
     <>
       <Aside content={content} updateContent={setContent} />
-      <Main {...content} />
+      <Main updateResume={setContent} resume_content={content} />
     </>
   );
 }

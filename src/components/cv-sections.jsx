@@ -1,4 +1,4 @@
-function Info({ props }) {
+function Info({ content, updateContent }) {
     return (
         <div className="info">
             <img src="https://picsum.photos/250/300" height={300} width={250} alt="" className="profile_image" />
@@ -6,12 +6,16 @@ function Info({ props }) {
                 <p className="title">EDUCATION</p>
                 <div className="tag"></div>
                 {
-                    props.map((educ_record, index) => {
+                    content.map((educ_record, index) => {
                         return (
-                            <div key={index} className="educ_record">
-                            <div className="delete">
-                                <svg fill="#dc3545" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
-                            </div>
+                            <div key={index} className="educ_record" onClick={() => {
+                                var educ_details = content;
+                                educ_details.splice(index, 1);
+                                updateContent((content) => ({ ...content, education: educ_details }));
+                            }}>
+                                <div className="delete">
+                                    <svg fill="#dc3545" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
+                                </div>
                                 <p className="course">{educ_record.course}</p>
                                 <p className="campus">{educ_record.campus}</p>
                                 <p className="years">{educ_record.period.start}-{educ_record.period.end}</p>
@@ -78,15 +82,19 @@ function Profile(props) {
     );
 }
 
-function Work({ props }) {
+function Work({ content, updateContent }) {
     return (
         <div className="work">
             <p className="title">WORK EXPERIENCE</p>
             <div className="tag"></div>
             {
-                props.map((work_record, index) => {
+                content.map((work_record, index) => {
                     return (
-                        <div key={index} className="work_record">
+                        <div key={index} className="work_record"  onClick={() => {
+                            var work_details = content;
+                            work_details.splice(index, 1);
+                            updateContent((content) => ({ ...content, work: work_details }));
+                        }}>
                             <div className="delete">
                                 <svg fill="#dc3545" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Delete</title><path d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z" /></svg>
                             </div>

@@ -123,16 +123,15 @@ function EducationForm({ content, updateContent }) {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>
                         </div>
                     </div>
-                    {content.education.length > 0
-                        &&
-                        <div className="add-container">
-                            <div className="add" onClick={() => {
-                                setView((view) => view = !view);
-                            }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
-                                <p>Add Education</p>
-                            </div>
-                        </div>}
+
+                    <div className="add-container">
+                        <div className="add" onClick={() => {
+                            setView((view) => view = !view);
+                        }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                            <p>Add Education</p>
+                        </div>
+                    </div>
                 </section>
                 :
                 <section className="education">
@@ -264,17 +263,14 @@ function WorkForm({ content, updateContent }) {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>
                         </div>
                     </div>
-                    {
-                        content.work.length > 0
-                        && <div className="add-container">
-                            <div className="add" onClick={() => {
-                                setView((view) => view = !view);
-                            }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
-                                <p>Add Work</p>
-                            </div>
+                    <div className="add-container">
+                        <div className="add" onClick={() => {
+                            setView((view) => view = !view);
+                        }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                            <p>Add Work</p>
                         </div>
-                    }
+                    </div>
                 </section>
                 :
                 <section className="work">

@@ -42,6 +42,39 @@ div.cv {
 
 .educ_record {
     margin-bottom: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    min-width: 170px;
+}
+
+.educ_record:hover,
+.work_record:hover {
+    background-color: rgba(250, 128, 114, 0.24);
+}
+
+.delete {
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.educ_record svg,
+.work_record svg {
+    display: none;
+    height: 20px;
+    width: 20px;
+}
+
+.educ_record:hover svg,
+.work_record:hover svg {
+    display: block;
 }
 
 .educ_record p.course {
@@ -142,6 +175,10 @@ div.contact_details {
 
 .work_record {
     margin-top: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
 }
 
 .work_record .role {

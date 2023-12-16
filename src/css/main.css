@@ -215,3 +215,18 @@ div.contact_details {
     font-size: 0.6rem;
     font-weight: bold;
 }
+
+div.error {
+    border: 1px solid red;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(253, 173, 164);
+    padding: 4px;
+    font-weight: 600;
+    color: rgb(255, 0, 0);
+    margin-top: 10px;
+    display: none;
+}

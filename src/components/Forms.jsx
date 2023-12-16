@@ -2,14 +2,36 @@ import { useState } from "react";
 
 function PersonalForm({ updateContent }) {
     var updates = {};
+    var inputFields = document.querySelectorAll("section.personal input");
+
+    const checkValid = () => {
+        for (let field of inputFields) {
+            if (field.validity.valueMissing) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    const showError = () => {
+        var error = document.querySelector("section.personal .error");
+        error.style.display = "flex";
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 3000);
+    }
 
     return (
         <section className="personal">
             <p className="title">Personal Information</p>
+            <div className="error">
+                <p>Please complete the form</p>
+            </div>
             <form action="" method="POST">
                 <div className="field">
                     <label htmlFor="fullname">Fullname</label>
                     <input
+                        required
                         type="text"
                         name="fullname"
                         id="fullname"
@@ -26,6 +48,7 @@ function PersonalForm({ updateContent }) {
                 <div className="field">
                     <label htmlFor="job">Job Title</label>
                     <input
+                        required
                         type="text"
                         name="job"
                         id="job"
@@ -42,6 +65,7 @@ function PersonalForm({ updateContent }) {
                 <div className="field">
                     <label htmlFor="email">Email</label>
                     <input
+                        required
                         type="email"
                         name="email"
                         id="email"
@@ -58,6 +82,7 @@ function PersonalForm({ updateContent }) {
                 <div className="field">
                     <label htmlFor="phone">Phone</label>
                     <input
+                        required
                         type="tel"
                         name="phone"
                         id="phone"
@@ -74,6 +99,7 @@ function PersonalForm({ updateContent }) {
                 <div className="field">
                     <label htmlFor="address">Address</label>
                     <input
+                        required
                         type="text"
                         name="address"
                         id="address"
@@ -87,10 +113,28 @@ function PersonalForm({ updateContent }) {
                             }
                         }} />
                 </div>
+                <div className="field">
+                    <label htmlFor="bio">Bio</label>
+                    <input
+                        required
+                        type="text"
+                        name="bio"
+                        id="bio"
+                        placeholder="Bio"
+                        onChange={(e) => {
+                            try {
+                                updates['profile']['bio'] = e.target.value;
+                            } catch (TypeError) {
+                                updates['profile'] = {};
+                                updates['profile']['bio'] = e.target.value;
+                            }
+                        }} />
+                </div>
                 <div className="actions">
                     <button id="submit" type="submit" onClick={(e) => {
                         e.preventDefault();
-                        updateContent((prevContent) => ({ ...prevContent, ...updates }));
+                        if (checkValid()) updateContent((prevContent) => ({ ...prevContent, ...updates }));
+                        else showError();
                     }}>
                         Update
                     </button>
@@ -105,6 +149,23 @@ function EducationForm({ content, updateContent }) {
     const [view, setView] = useState(true);
 
     var educ_record = {};
+
+    const checkValid = (inputFields) => {
+        for (let field of inputFields) {
+            if (field.validity.valueMissing) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    const showError = () => {
+        var error = document.querySelector("section.education .error");
+        error.style.display = "flex";
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 3000);
+    }
 
     return (
         open === true
@@ -147,10 +208,14 @@ function EducationForm({ content, updateContent }) {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>
                         </div>
                     </div>
+                    <div className="error">
+                        <p>Please complete the form</p>
+                    </div>
                     <form action="" method="POST">
                         <div className="field">
                             <label htmlFor="school">School</label>
                             <input
+                                required
                                 type="text"
                                 name="school"
                                 id="school"
@@ -162,6 +227,7 @@ function EducationForm({ content, updateContent }) {
                         <div className="field">
                             <label htmlFor="degree">Degree</label>
                             <input
+                                required
                                 type="text"
                                 name="degree"
                                 id="degree"
@@ -174,6 +240,7 @@ function EducationForm({ content, updateContent }) {
                             <div className="field">
                                 <label htmlFor="start">Start Year</label>
                                 <input
+                                    required
                                     type="number"
                                     min={1900}
                                     max={3000}
@@ -192,6 +259,7 @@ function EducationForm({ content, updateContent }) {
                             <div className="field">
                                 <label htmlFor="end">End Year</label>
                                 <input
+                                    required
                                     type="number"
                                     min={1900}
                                     max={3000}
@@ -214,11 +282,16 @@ function EducationForm({ content, updateContent }) {
                             setView((view) => view = !view);
                             setOpen((open) => open = !open);
                         }}>Cancel</button>
-                        <button id="save" onClick={() => {
-                            var prevEducation = content.education;
-                            prevEducation.push(educ_record);
-                            updateContent((content) => ({ ...content, education: prevEducation }));
-                            setView((view) => view = !view);
+                        <button id="save" onClick={(e) => {
+                            e.preventDefault();
+                            var inputFields = document.querySelectorAll("section.education input");
+                            if (checkValid(inputFields)) {
+                                var prevEducation = content.education;
+                                prevEducation.push(educ_record);
+                                updateContent((content) => ({ ...content, education: prevEducation }));
+                                setView((view) => view = !view);
+                            }
+                            else showError();
                         }}>Save</button>
                     </div>
                 </section>
@@ -244,6 +317,23 @@ function WorkForm({ content, updateContent }) {
     const [view, setView] = useState(true);
 
     var work_record = {};
+
+    const checkValid = (inputFields) => {
+        for (let field of inputFields) {
+            if (field.validity.valueMissing) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    const showError = () => {
+        var error = document.querySelector("section.work .error");
+        error.style.display = "flex";
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 3000);
+    }
 
     return (
         open === true
@@ -286,10 +376,14 @@ function WorkForm({ content, updateContent }) {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Close</title><path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" /></svg>
                         </div>
                     </div>
+                    <div className="error">
+                        <p>Please complete the form</p>
+                    </div>
                     <form action="" method="post">
                         <div className="field">
                             <label htmlFor="name">Company Name</label>
                             <input
+                                required
                                 type="text"
                                 name="name"
                                 id="name"
@@ -301,6 +395,7 @@ function WorkForm({ content, updateContent }) {
                         <div className="field">
                             <label htmlFor="position">Position (title)</label>
                             <input
+                                required
                                 type="text"
                                 name="position"
                                 id="position"
@@ -313,6 +408,7 @@ function WorkForm({ content, updateContent }) {
                             <div className="field">
                                 <label htmlFor="start">Start Year</label>
                                 <input
+                                    required
                                     type="text"
                                     name="start"
                                     id="start"
@@ -329,6 +425,7 @@ function WorkForm({ content, updateContent }) {
                             <div className="field">
                                 <label htmlFor="end">End Year</label>
                                 <input
+                                    required
                                     type="text"
                                     name="end"
                                     id="end"
@@ -343,20 +440,10 @@ function WorkForm({ content, updateContent }) {
                                     }} />
                             </div>
                         </div>
-                        {/* <div className="field">
-                            <label htmlFor="location">Location</label>
-                            <input 
-                                    type="text" 
-                                    name="location" 
-                                    id="location" 
-                                    placeholder="Location"
-                                    onChange={(e) => {
-                                        work_record['loca'] = e.target.value;
-                                    }} />
-                        </div> */}
                         <div className="field">
                             <label htmlFor="description">Description</label>
                             <input
+                                required
                                 type="text"
                                 name="description"
                                 id="description"
@@ -371,11 +458,16 @@ function WorkForm({ content, updateContent }) {
                             setView((view) => view = !view);
                             setOpen((open) => open = !open);
                         }}>Cancel</button>
-                        <button id="save" onClick={() => {
-                            var prevWork = content.work;
-                            prevWork.push(work_record);
-                            updateContent((content) => ({ ...content, work: prevWork }));
-                            setView((view) => view = !view);
+                        <button id="save" onClick={(e) => {
+                            e.preventDefault();
+                            var inputFields = document.querySelectorAll("section.work input");
+                            if (checkValid(inputFields)) {
+                                var prevWork = content.work;
+                                prevWork.push(work_record);
+                                updateContent((content) => ({ ...content, work: prevWork }));
+                                setView((view) => view = !view);
+                            }
+                            else showError();
                         }}>Save</button>
                     </div>
                 </section>

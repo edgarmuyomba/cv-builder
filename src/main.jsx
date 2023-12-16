@@ -11,7 +11,8 @@ function Resume() {
   const resume_content = {
     profile: {
       name: 'Edgar Muyomba',
-      job_title: 'Software Engineer'
+      job_title: 'Software Engineer',
+      bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis veritatis optio blanditiis laborum eligendi consectetur repellendus eveniet! Laboriosam sapiente cumque recusandae repellat laudantium a, iste eum dolores earum saepe.'
     },
     contact: {
       phone: '+256 758 101 803',

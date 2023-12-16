@@ -40,6 +40,7 @@ function Resume() {
       {
         role: 'Mobile Application Developer',
         company: 'Ridelink Inc',
+        description: 'Worked as a data analyst / data entry operator. Led a team and worked with a personalized application',
         period: {
           start: '2023',
           end: 'Present'
@@ -48,6 +49,7 @@ function Resume() {
       {
         role: 'Data Analyst / Data Entry Operator',
         company: 'Intelligent Image Management Limited',
+        description: 'Worked as a data analyst / data entry operator. Led a team and worked with a personalized application',
         period: {
           start: '2020',
           end: '2023'

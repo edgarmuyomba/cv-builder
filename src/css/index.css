@@ -16,6 +16,7 @@
 div#root {
   padding: 1rem 10rem;
   width: 100vw;
+  min-height: 100vh;
   display: flex;
   gap: 20px;
   background-color: whitesmoke;

@@ -89,7 +89,7 @@ function Work({ props }) {
                                 <span className="period">{work_record.period.start}-{work_record.period.end}</span>
                                 {work_record.company}
                             </p>
-                            <p className="description">Worked as a data analyst / data entry operator. Led a team and worked with a personalized application</p>
+                            <p className="description">{work_record.description}</p>
                         </div>
                     );
                 })

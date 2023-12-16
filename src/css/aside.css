@@ -122,8 +122,10 @@ div.add-container {
 
 div.add {
     display: flex;
-    font-size: 0.8rem;
-    width: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    width: 40%;
     margin: 10px;
     border: 1px solid lightgrey;
     background-color: whitesmoke;

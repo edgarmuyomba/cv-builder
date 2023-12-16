@@ -5,7 +5,7 @@ export default function Aside({ content, updateContent }) {
         <aside>
             <PersonalForm updateContent={updateContent} />
             <EducationForm content={content} updateContent={updateContent} />
-            <WorkForm />
+            <WorkForm content={content} updateContent={updateContent} />
         </aside>
     );
 };

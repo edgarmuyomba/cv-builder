@@ -239,7 +239,15 @@ div.error {
     display: none;
 }
 
-div.clear {
+div.extra {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+div.clear,
+div.print {
     height: 50px;
     width: 50px;
     border-radius: 100%;
@@ -348,6 +356,11 @@ div.clear {
 
     .work_record p.company {
         line-height: 16px;
+    }
+
+    div.extra {
+        height: 60px;
+        flex-direction: row;
     }
 
 }

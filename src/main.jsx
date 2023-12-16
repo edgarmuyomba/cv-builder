@@ -5,6 +5,7 @@ import Main from './components/Main.jsx'
 import './css/index.css'
 import './css/aside.css';
 import './css/main.css';
+import './css/print.css';
 import { useState } from 'react';
 
 function Resume() {

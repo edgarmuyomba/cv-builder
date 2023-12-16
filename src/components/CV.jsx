@@ -1,8 +1,9 @@
 import { Info, Contact, Profile, Work, Interests } from "./cv-sections";
+import { forwardRef } from "react";
 
-export default function CV({ resume, updateResume }) {
+const CV = forwardRef(({ resume, updateResume }, ref) => {
     return (
-      <div className="cv">
+      <div className="cv" ref={ref}>
         <div className="side">
             <Info content={resume.education} updateContent={updateResume}/>
             <Contact {...resume.contact} />
@@ -14,4 +15,6 @@ export default function CV({ resume, updateResume }) {
         </div>
       </div>  
     );
-}
+});
+
+export default CV;

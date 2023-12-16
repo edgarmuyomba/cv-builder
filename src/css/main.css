@@ -24,8 +24,6 @@ div.cv {
 }
 
 .info picture {
-    height: 50%;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,6 +201,7 @@ div.contact_details {
 
 .work_record span {
     padding: 4px 8px;
+    margin-right: 4px;
     font-size: 0.5rem;
     background-color: var(--yellow);
     font-weight: 700;
@@ -238,6 +237,19 @@ div.error {
     color: rgb(255, 0, 0);
     margin-top: 10px;
     display: none;
+}
+
+div.clear {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
 }
 
 @media (max-width: 1024px) {

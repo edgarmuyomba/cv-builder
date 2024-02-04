@@ -26,6 +26,9 @@ You can checkout the live demo [here](https://edgarmuyomba.github.io/cv-builder)
    npm install
    ```
 5. run this command to run the server and access the demo on [localhost:5173](http://localhost:5173/)
+   ```
+   npm run dev
+   ```
 
 ## Build with
 1. [React](https://react.dev/)

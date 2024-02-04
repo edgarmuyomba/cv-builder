@@ -4,9 +4,20 @@
     }
 
     div.cv {
-        border: 1px solid red;
         height: 100vh;
         width: 100vw;
+    }
+
+    div.top {
+        height: 30%;
+    }
+
+    .top .profile {
+        height: 100%;
+    }
+
+    div.bottom {
+        height: 70%;
     }
 
     .cv .info {

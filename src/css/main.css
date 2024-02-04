@@ -7,25 +7,13 @@ main {
 
 div.cv {
     display: flex;
-    /* changes */
-    /* flex-direction: column; */
+    flex-direction: column;
 }
 
-/* div.bottom {
+div.bottom {
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 1fr 1fr;
 }
-
-div.contact_details {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-div.work {
-    grid-area: 1 / 2 / 3 / 3
-} */
-
-/* changes */
 
 .cv>.side {
     width: 40%;
@@ -128,6 +116,7 @@ div.contact_details {
     grid-template-rows: repeat(3, 50px);
     padding-bottom: 0;
     height: 100%;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 .contact_details .icons {
@@ -166,16 +155,20 @@ div.contact_details {
     font-size: 0.6rem;
 }
 
-.main .profile {
+.top .profile {
     padding: 32px;
     background-color: var(--grey);
 }
 
-.main .profile .name {
+.top .profile .name {
     font-size: 2rem;
     font-weight: 500;
     color: var(--black);
     text-align: center;
+}
+
+.profile p.title {
+    margin-top: 1rem;
 }
 
 .main .title {
@@ -194,8 +187,10 @@ div.contact_details {
     -webkit-box-orient: vertical;
 }
 
-.main .work {
+.bottom .work {
     padding: 0 32px;
+    padding-top: 20px;
+    grid-area: 1 / 2 / 3 / 3;
 }
 
 .work_record {
@@ -267,6 +262,10 @@ div.print {
 }
 
 @media (max-width: 1024px) {
+    div.bottom {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
     .cv .education {
         padding: 16px 0;
         width: 100%;
@@ -283,8 +282,9 @@ div.print {
         padding-bottom: 0;
     }
 
-    .main .work {
+    .bottom .work {
         padding: 0 24px;
+        padding-top: 20px;
     }
 
     .work_record {
@@ -347,8 +347,8 @@ div.print {
         padding-top: 16px;
     }
 
-    .main .work {
-        padding: 0 20px;
+    .bottom .work {
+        padding: 20px;
     }
 
     .main .interests {

@@ -4,20 +4,12 @@ import { forwardRef } from "react";
 const CV = forwardRef(({ resume, updateResume }, ref) => {
   return (
     <div className="cv" ref={ref}>
-      {/* <div className="top">
+      <div className="top">
         <Profile {...resume.profile} />
       </div>
       <div className="bottom">
         <Info content={resume.education} updateContent={updateResume} />
         <Contact {...resume.contact} />
-        <Work content={resume.work} updateContent={updateResume} />
-      </div> */}
-      <div className="side">
-        <Info content={resume.education} updateContent={updateResume} />
-        <Contact {...resume.contact} />
-      </div>
-      <div className="main">
-        <Profile {...resume.profile} />
         <Work content={resume.work} updateContent={updateResume} />
       </div>
     </div>

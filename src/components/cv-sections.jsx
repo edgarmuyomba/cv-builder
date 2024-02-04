@@ -1,11 +1,11 @@
 function Info({ content, updateContent }) {
     return (
         <div className="info">
-            <picture>
+            {/* <picture>
                 <source media="(max-width: 767px)" srcSet="https://picsum.photos/100/160" />
                 <source media="(max-width: 1024px)" srcSet="https://picsum.photos/120/220" />
                 <img src="https://picsum.photos/250/300" alt="" className="profile_image" />
-            </picture>
+            </picture> */}
             <div className="education">
                 <p className="title">EDUCATION</p>
                 <div className="tag"></div>
@@ -14,7 +14,7 @@ function Info({ content, updateContent }) {
                         return (
                             <div key={index} className="educ_record" onClick={() => {
                                 var educ_details = content;
-                                educ_details.splice(index, 1);
+                                educ_details.splice(index, 1); 
                                 updateContent((content) => ({ ...content, education: educ_details }));
                             }}>
                                 <div className="delete">
